@@ -2,26 +2,17 @@ package ru.gb.timesheet;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.context.ConfigurableApplicationContext;
 import ru.gb.timesheet.aspect.RecoverAspectTest;
-import ru.gb.timesheet.model.Employee;
-import ru.gb.timesheet.model.Project;
-import ru.gb.timesheet.model.Role;
-import ru.gb.timesheet.model.Timesheet;
-import ru.gb.timesheet.model.User;
-import ru.gb.timesheet.repository.EmployeeRepository;
-import ru.gb.timesheet.repository.ProjectRepository;
-import ru.gb.timesheet.repository.RoleRepository;
-import ru.gb.timesheet.repository.TimesheetRepository;
-import ru.gb.timesheet.repository.UserRepository;
-
+import ru.gb.timesheet.model.*;
+import ru.gb.timesheet.repository.*;
 
 import java.time.LocalDate;
 import java.util.concurrent.ThreadLocalRandom;
 
-@EnableDiscoveryClient
+//@EnableDiscoveryClient
 @SpringBootApplication
+//@Import(LoggingAutoConfiguration.class)
 public class TimesheetRestApplication {
 
     public static void main(String[] args) {
@@ -30,8 +21,8 @@ public class TimesheetRestApplication {
         // RecoverAspect test
         RecoverAspectTest recoverTest = ctx.getBean(RecoverAspectTest.class);
         System.out.println("Recover test for Integer.class. Return value: " + recoverTest.getIntegerValue());
-        System.out.println("Recover test for int primitive. Return value: " + recoverTest.getIntValue());
-        System.out.println("Recover test for Optional<>.class. Return value: " + recoverTest.getOptionalValue());
+//        System.out.println("Recover test for int primitive. Return value: " + recoverTest.getIntValue());
+//        System.out.println("Recover test for Optional<>.class. Return value: " + recoverTest.getOptionalValue());
 
         ru.gb.timesheet.model.Role adminRole = new ru.gb.timesheet.model.Role();
         adminRole.setName("admin");

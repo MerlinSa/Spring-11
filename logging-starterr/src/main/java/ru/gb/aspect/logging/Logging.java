@@ -1,6 +1,4 @@
-package ru.gb.timesheet.aspect;
-
-import org.slf4j.event.Level;
+package ru.gb.aspect.logging;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
@@ -10,7 +8,5 @@ import java.lang.annotation.Target;
 
 @Retention(RetentionPolicy.RUNTIME)
 @Target({ElementType.METHOD, ElementType.TYPE})
-public @interface Timer {
-    boolean enabled() default true;
-    Level level() default Level.DEBUG;
+public @interface Logging {
 }

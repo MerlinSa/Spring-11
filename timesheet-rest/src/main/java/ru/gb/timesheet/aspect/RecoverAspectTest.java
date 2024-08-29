@@ -1,26 +1,28 @@
 package ru.gb.timesheet.aspect;
 
 import org.springframework.stereotype.Component;
-
-import java.util.Optional;
+import ru.gb.aspect.logging.Logging;
 
 @Component
 public class RecoverAspectTest {
+    @Logging
     @Recover
     public Integer getIntegerValue() {
-        System.out.println(1/0);
+        System.out.println(1 / 0);
         return 0;
     }
 
-    @Recover
-    public int getIntValue() {
-        System.out.println(1/0);
-        return 0;
-    }
-
-    @Recover
-    public Optional<?> getOptionalValue() {
-        System.out.println(1/0);
-        return Optional.empty();
-    }
+//    @Logging
+//    @Recover
+//    public int getIntValue() {
+//        System.out.println(1 / 0);
+//        return 0;
+//    }
+//
+//    @Logging
+//    @Recover
+//    public Optional<?> getOptionalValue() {
+//        System.out.println(1 / 0);
+//        return Optional.empty();
+   // }
 }
